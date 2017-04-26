@@ -1,0 +1,14 @@
+<templateSet group="PHP">
+  <template name="@test" value=" /** @test  */&#10;    public function it_$STOP$()&#10;    {&#10;        $END$&#10;    }" description="generate test function" toReformat="false" toShortenFQNames="true">
+    <variable name="STOP" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ctime" value="Carbon::parse($PARAM$)-&gt;format('d/m/Y H:i:s');" description="format time" toReformat="false" toShortenFQNames="true">
+    <variable name="PARAM" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>

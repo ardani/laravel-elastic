@@ -1,0 +1,17 @@
+<application>
+  <component name="NotificationConfiguration">
+    <notification groupId="Built-in Server" displayType="STICKY_BALLOON" />
+    <notification groupId="Database editor log" displayType="NONE" />
+    <notification groupId="Database view" displayType="TOOL_WINDOW" />
+    <notification groupId="Debugger messages" displayType="TOOL_WINDOW" shouldLog="false" />
+    <notification groupId="Git Important Messages" displayType="STICKY_BALLOON" />
+    <notification groupId="Git Messages" displayType="TOOL_WINDOW" />
+    <notification groupId="IDE Fatal Errors" displayType="NONE" />
+    <notification groupId="IDE Usage Statistics" displayType="STICKY_BALLOON" shouldLog="false" />
+    <notification groupId="PHP-CGI Server" displayType="STICKY_BALLOON" />
+    <notification groupId="Test Runner" displayType="NONE" />
+    <notification groupId="Web Deployment" displayType="STICKY_BALLOON" shouldLog="false" />
+    <notification groupId="Web Deployment: File Transfer" shouldLog="false" />
+    <notification groupId="Web Deployment: Remote Host" displayType="STICKY_BALLOON" shouldLog="false" />
+  </component>
+</application>

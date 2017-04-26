@@ -1,0 +1,17 @@
+<templateSet group="jquery">
+  <template name="@click" value="$(&quot;#$var$&quot;).click(function(){&#10;&#10;return false;&#10;});" description="click something" toReformat="false" toShortenFQNames="true">
+    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="@post" value="$.post(&quot;&lt;?=Request::url()?&gt;/action/saveitem&quot;,{nota:$(&quot;#inota&quot;).val(),kode : $(&quot;#kode&quot;).val(),jml: jml,pelanggan:$(&quot;#pelanggan&quot;).val(),tgl:$(&quot;#itgl&quot;).val()})&#10;                   .done(function(data){&#10;                        refresh();&#10;                       setclear();&#10;                       $(&quot;#kode&quot;).focus();&#10;                   })&#10;                   .fail(function(){&#10;                       alert('penyimpanan data gagal');&#10;                   });" description="post data" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+</templateSet>

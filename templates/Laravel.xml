@@ -1,0 +1,77 @@
+<templateSet group="Laravel">
+  <template name="cacheeloquent" value="////&#10;/* Subclassable, generic Model Observer */&#10;////&#10;&#10;class ModelObserver {&#10;&#10;    protected function clearCacheTags($tags)&#10;  {&#10;    Cache::tags($tags)-&gt;flush();&#10;  }&#10;  &#10;  public function saved($model)&#10;  {&#10;    $this-&gt;clearCacheTags($model-&gt;getTable());&#10;  }&#10;&#10;  public function deleted($model)&#10;  {&#10;    $this-&gt;clearCacheTags($model-&gt;getTable());&#10;  }&#10;&#10;  public function restored($model)&#10;  {&#10;    $this-&gt;clearCacheTags($model-&gt;getTable());&#10;  }&#10;&#10;}&#10;&#10;////&#10;/* Base Model that other models subclass */&#10;////&#10;&#10;class BaseModel extends \Illuminate\Database\Eloquent\Model {&#10;    &#10;  public static function table()&#10;  {&#10;    $instance = new static;&#10;    return $instance-&gt;getTable();&#10;  }&#10;    &#10;}&#10;&#10;////&#10;/* Set up observers, for example in start/global.php */&#10;////&#10;&#10;$modelObserver = new ModelObserver;&#10;Comment::observe($modelObserver);&#10;Post::observe($modelObserver);&#10;User::observe($modelObserver);&#10;&#10;////&#10;/* Putting it all together: note how regardless of which model type gets &#10; * updated, we've tagged this Cache closure with each of the involved models'&#10; * tables, so we will automatically get a fresh result set in case of changes.&#10; */&#10;////&#10;&#10;$posts = Cache::tags(User::table(),Post::table(),Comment::table())-&gt;remember('whatever_unique_key_you_want', 60 * 24, function() {&#10;    return Post::with('user','comments')&#10;        -&gt;latest()&#10;        -&gt;take(10)&#10;    -&gt;get();&#10;});&#10;&#10;Stats&#10;&#10;    8 likes&#10;    719 views&#10;&#10;Categories&#10;&#10;    Eloquent&#10;    Cache&#10;    Performance&#10;&#10;Tags&#10;&#10;    4.1&#10;    database&#10;    models&#10;    relationships&#10;&#10;" description="Easy Eloquent + Relation Cache Management" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="angular pagination" value="// main.js&#10;&#10;(function() {&#10;    &#10;    'use strict';&#10;    &#10;    angular.module('app')&#10;    &#10;        .controller('MainCtrl', ['$scope', '$http', function($scope, $http) {&#10;            $scope.main = {&#10;                page: 1,&#10;                take: 15&#10;            };&#10;            &#10;            $scope.loadPage = function() {&#10;                // You could use Restangular here with a route resource.&#10;                $http.get('api/v2/users?page=' + main.page + '&amp;take=' + main.take).success(function(data){&#10;                    // users from your api&#10;                    $scope.main.users = data.users;&#10;                    &#10;                    // number of pages of users&#10;                    $socpe.main.pages = data.pages;&#10;                });&#10;            };&#10;            &#10;            $scope.nextPage = function() {&#10;                if ($scope.main.page &lt; $scope.main.pages) {&#10;                    $scope.main.page++;&#10;                    $scope.loadPage();&#10;                }&#10;            };&#10;            &#10;            $scope.previousPage = function() {&#10;                if ($scope.main.page &gt; 1) {&#10;                    $scope.main.page--;&#10;                    $scope.loadPage();&#10;                }&#10;            };&#10;        }]);&#10;&#10;});&#10;&#10;// main.tpl.html&#10;&#10;&lt;ul&gt;&#10;    &lt;li ng-repeat='user in users'&gt;{{ user.email }}&lt;/li&gt;&#10;&lt;/ul&gt;&#10;&lt;button ng-click='previousPage()'&gt;Previous&lt;button&gt;&#10;&lt;button ng-click='nextPage()'&gt;Next&lt;button&gt;" description="laravel api pagination with angular js" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="routenamespace" value="Route::group(array('namespace' =&gt; 'Controllers'), function()&#10;{&#10;    Route::get('/', array('as' =&gt; 'home', 'uses' =&gt; 'HomeController@index'))&#10;    &#10;    Route::group(array('namespace' =&gt; 'Admin'), function()&#10;    {&#10;        // Notice how, by nesting route groups, the namespace will automatically&#10;        // be nested as well!&#10;        Route::get('admin/dashboard', array('as' =&gt; 'admin.dashboard.index', 'uses' =&gt; 'DashboardController@index'));&#10;    });&#10;});" description="route group with namespace" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="path::" value="&lt;?php&#10;/**&#10; * Path to the 'app' folder&#10; */&#10;echo app_path();&#10;/**&#10; * Path to the project's root folder&#10; */&#10;echo base_path();&#10;/**&#10; * Path to the 'public' folder&#10; */&#10;echo public_path();&#10;/**&#10; * Path to the 'app/storage' folder&#10; */&#10;echo storage_path();&#10;?&gt;" description="path on laravel 4" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="controller::" value="class UserController extends BaseController {&#10;    public function __construct()&#10;    {&#10;   &#10;    }&#10;&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="r::g" value="Route::get('/', function()&#10;{&#10;    return 'Hello World';&#10;});" description="route get" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="r::p" value="Route::post('foo/bar', function()&#10;{&#10;    return 'Hello World';&#10;});" description="route post" toReformat="false" toShortenFQNames="true" />
+  <template name="@func" value="public function $STOP$()&#10;{&#10;    $END$&#10;}" description="generate public function" toReformat="false" toShortenFQNames="true">
+    <variable name="STOP" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="callbackno" value="-&gt;setCallbacks('fnDrawCallback','function(oSettings){&#10;                if ( oSettings.bSorted || oSettings.bFiltered ){&#10;                    for ( var i=0, iLen=oSettings.aiDisplay.length ; i&lt;iLen ; i++ ){&#10;                        $(&quot;td:eq(0)&quot;, oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html( i+1 );&#10;                   }}}')" description="set callback no" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="@timef" value="public $timestamps = false;" description="timestamps off" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="@readtime" value=" protected function getHumanTimestampAttribute($column)&#10;{&#10;if ($this-&gt;attributes[$column])&#10;{&#10;return Carbon::parse($this-&gt;attributes[$column])-&gt;diffForHumans();&#10;}&#10; &#10;return null;&#10;}&#10; &#10;public function getHumanCreatedAtAttribute()&#10;{&#10;return $this-&gt;getHumanTimestampAttribute(&quot;created_at&quot;);&#10;}&#10; &#10;public function getHumanUpdatedAtAttribute()&#10;{&#10;return $this-&gt;getHumanTimestampAttribute(&quot;updated_at&quot;);&#10;}&#10; &#10;public function getHumanDeletedAtAttribute()&#10;{&#10;return $this-&gt;getHumanTimestampAttribute(&quot;deleted_at&quot;);&#10;}" description="read timestamps" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="@relasi" value=" public static $relationsData = array(&#10;        'perguruan' =&gt; array(self::BELONGS_TO, 'Acme\\Siakad\\Model\\Perguruan_tinggi_model','foreignKey'=&gt;'kode_pt'),&#10;    );" description="relasi" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="@boot" value="public static function boot()&#10;{&#10;    parent::boot();&#10;&#10;    static::creating(function($model)&#10;    {&#10;        //code here&#10;    });&#10;    &#10;     static::updated(function($model)&#10;    {&#10;        //code here&#10;    });&#10;    &#10;    static::deleted(function($model)&#10;    {&#10;        //code here&#10;    });&#10;&#10;}" description="boot model" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="[[" value="[[$var$]]" description="autocomplete" toReformat="false" toShortenFQNames="true">
+    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="@getdates" value="public function getDates()&#10;  {&#10;      return [&#10;          'created_at',&#10;          'updated_at',&#10;      ];&#10;  }" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>

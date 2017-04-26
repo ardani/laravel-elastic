@@ -1,0 +1,7 @@
+<templateSet group="Bootstrap3">
+  <template name="bs3-panel" value="&lt;div class=&quot;panel panel-$var1$&quot;&gt;&#10;    &lt;div class=&quot;panel-heading&quot;&gt;$var2$&lt;/div&gt;&#10;&#9;&lt;div class=&quot;panel-body&quot;&gt;&#10;&#9;   $var3$&#10;&#9;&lt;/div&gt;&#10;&lt;/div&gt;$END$" description="Panel" toReformat="false" toShortenFQNames="false">
+    <variable name="var1" expression="&quot;default&quot;" defaultValue="" alwaysStopAt="true" />
+    <variable name="var2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="var3" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+</templateSet>

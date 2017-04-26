@@ -1,0 +1,12 @@
+<templateSet group="drupal">
+  <template name="dr-entityfieldquery" value="$query = new EntityFieldQuery();&#10;&#10;$query-&gt;entityCondition('entity_type', 'node')&#10;    -&gt;entityCondition('bundle', 'article')&#10;    -&gt;propertyCondition('status', NODE_PUBLISHED)&#10;    -&gt;fieldCondition('field_news_types', 'value', 'spotlight', '=')&#10;    -&gt;fieldCondition('field_photo', 'fid', 'NULL', '!=')&#10;    -&gt;fieldCondition('field_faculty_tag', 'tid', $value)&#10;    -&gt;fieldCondition('field_news_publishdate', 'value', $year . '%', 'like')&#10;    -&gt;fieldOrderBy('field_photo', 'fid', 'DESC')&#10;    -&gt;range(0, 10)&#10;    -&gt;addMetaData('account', user_load(1)); // Run the query as user 1.&#10;&#10;$result = $query-&gt;execute();&#10;&#10;if (isset($result['node'])) {&#10;    $news_items_nids = array_keys($result['node']);&#10;    $news_items = entity_load('node', $news_items_nids);&#10;}" description="template entity field query" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="dr-und" value="['und'][0]['value']" description="complete und value" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="IntentionManagerSettings">
+    <ignoreAction name="Declaration/Check RegExp" />
+    <ignoreAction name="Language Injection/Edit Injected Fragment" />
+    <ignoreAction name="Language Injection/Edit Injection Settings" />
+    <ignoreAction name="Language Injection/Inject Language/Reference" />
+    <ignoreAction name="Language Injection/Un-inject Language/Reference" />
+    <ignoreAction name="SQL/Expand column list" />
+    <ignoreAction name="SQL/Quote identifier" />
+    <ignoreAction name="SQL/Unquote identifier" />
+    <ignoreAction name="XML/Add Xsi Schema Location for External Resource" />
+    <ignoreAction name="XML/Choose Color" />
+    <ignoreAction name="XML/Expand Empty Tag" />
+    <ignoreAction name="XML/Insert Namespace Prefix" />
+    <ignoreAction name="XML/Manually Setup External Resource" />
+    <ignoreAction name="XML/Merge Tags" />
+    <ignoreAction name="XML/Set Namespace Prefix to Empty" />
+    <ignoreAction name="XML/Split current tag" />
+    <ignoreAction name="XSLT/Add optional Argument(s)" />
+    <ignoreAction name="XSLT/Convert if to choose" />
+    <ignoreAction name="XSLT/Inline xsl:attribute" />
+    <ignoreAction name="XSLT/Replace with xsl:attribute" />
+  </component>
+</application>
+

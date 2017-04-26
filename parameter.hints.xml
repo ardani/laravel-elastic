@@ -1,0 +1,9 @@
+<application>
+  <component name="ParameterNameHintsSettings">
+    <blacklists>
+      <blacklist language="PHP">
+        <added pattern="\helper_error_respond(message,code,language_code,services)" />
+      </blacklist>
+    </blacklists>
+  </component>
+</application>

@@ -1,0 +1,17 @@
+<application>
+  <component name="EditorSettings">
+    <option name="USE_SOFT_WRAPS" value="" />
+    <option name="SHOW_BREADCRUMBS" value="false" />
+    <option name="SHOW_PARAMETER_NAME_HINTS" value="false" />
+  </component>
+  <component name="LiveEditOptions" updatePolicy="AUTO" />
+  <component name="SqlEditorOptions">
+    <option name="concatenateStringsOnEnter" value="true" />
+    <option name="qualificationType" value="On collisions" />
+  </component>
+  <component name="XmlEditorOptions">
+    <option name="showCssColorPreviewInGutter" value="false" />
+    <option name="tagTreeHighlightingLevelCount" value="1" />
+    <option name="tagTreeHighlightingOpacity" value="5" />
+  </component>
+</application>

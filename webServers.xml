@@ -1,0 +1,11 @@
+<application>
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b52eec32-b2db-4819-8482-bbeca734bfb4" name="serviceapp" url="http://serviceapp.dev">
+        <fileTransfer host="1tripstory.com" port="21">
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</application>
