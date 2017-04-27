@@ -143,6 +143,15 @@
             <configuration_option name="mysqlnd.net_read_timeout" value="31536000" />
             <configuration_option name="mysqlnd.sha256_server_public_key" value="" />
             <configuration_option name="mysqlnd.trace_alloc" value="" />
+            <configuration_option name="oci8.connection_class" value="" />
+            <configuration_option name="oci8.default_prefetch" value="100" />
+            <configuration_option name="oci8.events" value="0" />
+            <configuration_option name="oci8.max_persistent" value="-1" />
+            <configuration_option name="oci8.old_oci_close_semantics" value="0" />
+            <configuration_option name="oci8.persistent_timeout" value="-1" />
+            <configuration_option name="oci8.ping_interval" value="60" />
+            <configuration_option name="oci8.privileged_connect" value="0" />
+            <configuration_option name="oci8.statement_cache_size" value="20" />
             <configuration_option name="open_basedir" value="" />
             <configuration_option name="openssl.cafile" value="" />
             <configuration_option name="openssl.capath" value="" />
@@ -316,6 +325,7 @@
             <extension name="curl" />
             <extension name="date" />
             <extension name="dom" />
+            <extension name="ds" />
             <extension name="exif" />
             <extension name="fileinfo" />
             <extension name="filter" />
@@ -333,6 +343,7 @@
             <extension name="mcrypt" />
             <extension name="mysqli" />
             <extension name="mysqlnd" />
+            <extension name="oci8" />
             <extension name="openssl" />
             <extension name="pcre" />
             <extension name="pdo_mysql" />
