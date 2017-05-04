@@ -8,6 +8,7 @@
       <mapping pattern="Theme.pho" type="PLAIN_TEXT" />
       <mapping pattern=".gitkeep" type="PLAIN_TEXT" />
       <mapping pattern="AuthExternalProvider.php" type="PLAIN_TEXT" />
+      <mapping ext="stub" type="PLAIN_TEXT" />
       <mapping ext="info" type="PLAIN_TEXT" />
     </extensionMap>
   </component>
