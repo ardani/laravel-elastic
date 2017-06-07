@@ -2,13 +2,14 @@
   <component name="FileTypeManager" version="17">
     <extensionMap>
       <mapping pattern="worker" type="PHP" />
+      <mapping pattern=".env.testing" type="PLAIN_TEXT" />
       <mapping pattern=".env" type="PLAIN_TEXT" />
       <mapping pattern=".keep" type="PLAIN_TEXT" />
       <mapping pattern="Theme.pho" type="PLAIN_TEXT" />
-      <mapping pattern="AuthExternalProvider.php" type="PLAIN_TEXT" />
-      <mapping pattern=".env.testing" type="PLAIN_TEXT" />
       <mapping pattern=".gitkeep" type="PLAIN_TEXT" />
+      <mapping pattern="AuthExternalProvider.php" type="PLAIN_TEXT" />
       <mapping ext="info" type="PLAIN_TEXT" />
+      <mapping pattern="report-debts.js" type="YAML" />
     </extensionMap>
   </component>
 </application>
